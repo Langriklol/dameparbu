@@ -1,0 +1,14 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: Ondřej
+ * Date: 29.06.2016
+ * Time: 17:17
+ */?>
+<p>Vítejte v administraci, jste přihlášeni jako <?= $username ?></p>
+<?php if (!($permissions > 1)) : ?>
+    <p>Nemáte přístupové oprávnění, požádejte administrátora webu, aby vám je přidělil - You have not permissions to access, please ask webmaster to get them.</p>
+<?php endif ?>
+<h2><a href="editor">Editor</a></h2>
+<h2><a href="articles">Articles</a></h2>
+<h2><a href="administration/logout">Odhlásit - Logout</a></h2>

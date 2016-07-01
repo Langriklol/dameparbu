@@ -1,0 +1,33 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: Ondřej
+ * Date: 28.06.2016
+ * Time: 21:14
+ */
+?>
+<div class="size">
+    <?php foreach($articles as $article): ?>
+    <div class="articles">
+        <div class="date"><?= $article['time'] ?></div>
+        <div class="author">
+            <img class="img-circle" width="80px" src="images/avatar.png" style="  top: 3px; position: relative;     border: 2px solid #cf0b0b;"><?= $article['author'] ?>
+        </div>
+        <img  style="width: 100%;" src="images/test-clanek1.png">
+        <h3 class="nazev"><a href="<?= $article['url']?>"<?= $article['title'] ?></a></h3>
+        <p class="text"><?= $article['content'] ?></p>
+        <div class="stats">
+            <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
+            <span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span>
+            <span class="glyphicon glyphicon-comment" aria-hidden="true"></span>
+            <span class="glyphicon glyphicon-share" aria-hidden="true"></span>
+        </div>
+        <?php if($permissions): ?>
+            <div class="tools">
+                <a href="editor/<?= $article['url'] ?>">Edit</a>
+                <a href="article/<?= $article['url'] ?>">Odstranit - Delete</a>
+            </div>
+        <?php endif; ?>
+    </div>
+    <?php endforeach; ?>
+</div>
